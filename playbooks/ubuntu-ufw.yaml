@@ -1,0 +1,29 @@
+---
+- hosts: ubuntu
+  become: yes
+
+  tasks:
+
+  - name: Disable and reset ufw
+    community.general.ufw:
+      state: reset
+
+  - name: Allow outgoing traffic
+    community.general.ufw:
+      policy: allow
+      direction: out
+
+  - name: Deny incomming traffic
+    community.general.ufw:
+      policy: deny
+      direction: in
+
+  - name: Allow OpenSSH
+    community.general.ufw:
+      rule: allow
+      name: OpenSSH
+
+  - name: Enable ufw firewall
+    community.general.ufw:
+      state: enabled
+
