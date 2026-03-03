@@ -19,7 +19,6 @@
       state: started
       daemon-reload: true
       enabled: true
-      immediate: true
 
   - name: Open port 8080
     community.general.ufw:
@@ -35,4 +34,4 @@
       state: restarted
       daemon-reload: true
       enabled: true
-      immediate: true
+

@@ -1,0 +1,15 @@
+---
+- hosts: ubuntu
+  become: true
+
+  tasks:
+
+  - name: Check if shared file exists
+    ansible.builtin.file: 
+      path: /mnt/shared/
+    register: result
+    ignore_errors: true
+
+  - name: Show result
+    ansible.builtin.debug:
+      var: result

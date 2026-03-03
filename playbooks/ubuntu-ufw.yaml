@@ -11,12 +11,12 @@
   - name: Allow outgoing traffic
     community.general.ufw:
       policy: allow
-      direction: out
+      direction: outgoing
 
-  - name: Deny incomming traffic
+  - name: Deny incoming traffic
     community.general.ufw:
       policy: deny
-      direction: in
+      direction: incoming
 
   - name: Allow OpenSSH
     community.general.ufw:
